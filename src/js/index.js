@@ -7,7 +7,8 @@ const passwordElement = document.getElementById('password');
 
 const allowedChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890!@#$%^&*()_+-={}[]:;<>,.?/';
 
-let passwordLength = 16;
+let passwordLength = rangeElement.value;
+let finalPassword = '';
 
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * allowedChar.length);
@@ -19,7 +20,7 @@ const setLengthPassword = ev => {
 };
 
 const generatePassword = () => {
-  let finalPassword = '';
+  finalPassword = '';
   for (let i = 0; i < passwordLength; i++) {
     const randomNumber = generateRandomNumber();
     finalPassword += allowedChar[randomNumber];
